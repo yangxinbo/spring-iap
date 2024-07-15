@@ -33,4 +33,5 @@ public class JWSTransactionDecodedPayload {
   private String type;
 
   private String webOrderLineItemId;
+  private String environment;
 }

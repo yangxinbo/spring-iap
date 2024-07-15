@@ -6,9 +6,9 @@ plugins {
 }
 
 group 'io.github.zhongzichang'
-version '1.0.1'
+version '1.0.2-SNAPSHOT'
 
-compileJava   {
+compileJava {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
 }
@@ -80,6 +80,13 @@ publishing {
         }
     }
 
+    def nexusSnapshotsUrl = project.property("nexusSnapshotsUrl")
+    def nexusUsername = project.property("nexusUsername")
+    def nexusPassword = project.property("nexusPassword")
+    println "Username: $nexusSnapshotsUrl"
+    println "Username: $nexusUsername"
+    println "Password: $nexusPassword"
+
     repositories {
 
         maven {
@@ -88,26 +95,23 @@ publishing {
         }
 
         maven {
-            name "snapshot"
-            url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            credentials {
-                username sonatypeUsername
-                password sonatypePassword
-            }
-        }
-
-        maven {
-            url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            credentials {
-                username sonatypeUsername
-                password sonatypePassword
+            name = "nexus-snapshots"
+            url = nexusSnapshotsUrl
+            allowInsecureProtocol = true
+            credentials  {
+                username =  nexusUsername
+                password = nexusPassword
             }
         }
     }
 
 }
 
-signing {
-    useGpgCmd()
-    sign publishing.publications.springIap
-}
+//signing {
+//    useGpgCmd()
+//    sign publishing.publications.springIap
+//}
+//
+//signatory {
+//    keyId = "your_key_id_value"
+//}
