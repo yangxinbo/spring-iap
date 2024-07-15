@@ -9,7 +9,7 @@ Maven
 <dependency>
   <groupId>io.github.zhongzichang</groupId>
   <artifactId>spring-iap</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
 </dependency>
 ```
 
