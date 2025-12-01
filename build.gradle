@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'io.github.zhongzichang'
-version '1.0.2-SNAPSHOT'
+version '20251201.01-SNAPSHOT'
 
 compileJava {
     sourceCompatibility = '1.8'
