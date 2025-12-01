@@ -83,7 +83,7 @@ publishing {
     def nexusSnapshotsUrl = project.property("nexusSnapshotsUrl")
     def nexusUsername = project.property("nexusUsername")
     def nexusPassword = project.property("nexusPassword")
-    println "Username: $nexusSnapshotsUrl"
+    println "nexusSnapshotsUrl: $nexusSnapshotsUrl"
     println "Username: $nexusUsername"
     println "Password: $nexusPassword"
 
