@@ -31,8 +31,9 @@ public interface NotificationDecoder {
   /**
    * Decode renewal info.
    * @see <a href="https://developer.apple.com/documentation/appstoreservernotifications/jwsrenewalinfo">renewal info on developer.apple.com</a>
-   * @param signedRenewalInfo {@link Data#getSignedRenewalInfo()} Subscription renewal information
-   *     signed by the App Store, in JSON Web Signature (JWS) * format.
+   * @param signedRenewalInfo Subscription renewal information signed by the App Store,
+   *     in JSON Web Signature (JWS) format. This can be obtained from the signedRenewalInfo field
+   *     in the {@link Data} class.
    * @return Subscription renewal information
    * @throws JsonProcessingException invalid content
    * @throws CertificateException invalid certificate
@@ -42,8 +43,9 @@ public interface NotificationDecoder {
   /**
    * Decode signed transaction info.
    * @see <a href="https://developer.apple.com/documentation/appstoreservernotifications/jwstransaction">transaction info on developer.apple.com</a>
-   * @param signedTransaction {@link Data#getSignedTransactionInfo()} Transaction information,
-   *     signed by the App Store, in JSON Web Signature (JWS) format.
+   * @param signedTransaction Transaction information signed by the App Store,
+   *     in JSON Web Signature (JWS) format. This can be obtained from the signedTransactionInfo field
+   *     in the {@link Data} class.
    * @return Transaction information
    * @throws JsonProcessingException invalid content
    * @throws CertificateException invalid certificate
